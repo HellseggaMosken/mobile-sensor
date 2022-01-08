@@ -29,6 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  sensors_plus: ^1.2.1
+  location: ^4.2.0
 
 
   # The following adds the Cupertino Icons font to your application.
