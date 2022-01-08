@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dev.cycg.mobile_sensor">
    <application
-        android:label="mobile_sensor"
+        android:label="Sensor"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
