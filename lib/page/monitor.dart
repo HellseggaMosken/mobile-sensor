@@ -30,7 +30,7 @@ class _MonitorPageState extends State<MonitorPage> {
     ),
   ];
 
-  final GNSS gnss = GNSS();
+  // final GNSS gnss = GNSS();
 
   @override
   Widget build(BuildContext context) {
@@ -38,22 +38,22 @@ class _MonitorPageState extends State<MonitorPage> {
       body: FutureBuilder(
         future: GNSS.initGnssSensor(),
         builder: (ctx, shot) {
-          if (shot.hasData && (shot.data as bool)) {
-            _children.addAll([
-              SignalGraph(
-                name: "GNSS Latitude",
-                signal: gnss.latitude(),
-              ),
-              SignalGraph(
-                name: "GNSS Longitude",
-                signal: gnss.longitude(),
-              ),
-              SignalGraph(
-                name: "GNSS Altitude",
-                signal: gnss.altitude(),
-              ),
-            ]);
-          }
+          // if (shot.hasData && (shot.data as bool)) {
+          //   _children.addAll([
+          //     SignalGraph(
+          //       name: "GNSS Latitude",
+          //       signal: gnss.latitude(),
+          //     ),
+          //     SignalGraph(
+          //       name: "GNSS Longitude",
+          //       signal: gnss.longitude(),
+          //     ),
+          //     SignalGraph(
+          //       name: "GNSS Altitude",
+          //       signal: gnss.altitude(),
+          //     ),
+          //   ]);
+          // }
           return ListView(children: _children);
         },
       ),
