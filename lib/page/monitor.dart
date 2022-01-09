@@ -30,6 +30,8 @@ class _MonitorPageState extends State<MonitorPage> {
     ),
   ];
 
+  final GNSS gnss = GNSS();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,15 +42,15 @@ class _MonitorPageState extends State<MonitorPage> {
             _children.addAll([
               SignalGraph(
                 name: "GNSS Latitude",
-                signal: GNSS.latitude(),
+                signal: gnss.latitude(),
               ),
               SignalGraph(
                 name: "GNSS Longitude",
-                signal: GNSS.longitude(),
+                signal: gnss.longitude(),
               ),
               SignalGraph(
                 name: "GNSS Altitude",
-                signal: GNSS.altitude(),
+                signal: gnss.altitude(),
               ),
             ]);
           }

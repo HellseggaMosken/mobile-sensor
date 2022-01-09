@@ -4,16 +4,23 @@ import 'package:location/location.dart';
 class GNSS {
   static final Location _location = Location();
   static final GNSS _instance = GNSS._();
-  GNSS._();
+  GNSS._() {
+    _location.changeSettings(
+      accuracy: LocationAccuracy.high,
+      interval: 100, // 10Hz
+    );
+  }
   factory GNSS() => _instance;
 
-  static Stream<double> latitude() =>
-      _location.onLocationChanged.map((e) => e.latitude!);
+  Stream<double> latitude() => _location.onLocationChanged.map((e) {
+        print(e);
+        return e.latitude!;
+      });
 
-  static Stream<double> longitude() =>
+  Stream<double> longitude() =>
       _location.onLocationChanged.map((e) => e.longitude!);
 
-  static Stream<double> altitude() =>
+  Stream<double> altitude() =>
       _location.onLocationChanged.map((e) => e.altitude!);
 
   static Future<bool> initGnssSensor() async {
